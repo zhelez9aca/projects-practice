@@ -7,6 +7,8 @@
 - [practice_documentation.md](practice_documentation.md) — описание TrackSwop, использованных источников и того, как под них адаптированы сайт и бот.
 - [telegram_bot_tutorial.md](telegram_bot_tutorial.md) — пошаговое руководство по созданию Telegram-бота-справочника по документации TrackSwop.
 - [modification.md](modification.md) — описание творческой модификации: бот и web-справочник вокруг основного проекта.
+- [partner_interaction.md](partner_interaction.md) — памятка по взаимодействию с организацией-партнёром и материал для будущего Markdown-отчёта.
+- [partner_event_report.md](partner_event_report.md) — отчёт о посещении партнёрского мероприятия и его связи с проектом `TrackSwop`.
 - `images/` — схемы и диаграммы, встроенные в техническую документацию.
 
 ## Что покрывает документация

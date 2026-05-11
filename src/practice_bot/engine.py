@@ -160,7 +160,7 @@ class PracticeBotEngine:
         lines = "\n\n".join(
             f"{index}. {title}\n{summary}" for index, (title, summary) in enumerate(JOURNAL, start=1)
         )
-        text = f"Три этапа разработки TrackSwop:\n\n{lines}"
+        text = f"Три этапа выполнения проектной практики:\n\n{lines}"
         return BotReply(text=text, suggestions=["Модификация", "Источники", "О проекте"])
 
     def _status(self) -> BotReply:

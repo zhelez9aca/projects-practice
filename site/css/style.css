@@ -508,6 +508,33 @@ input {
   margin-top: 24px;
 }
 
+.resource-note {
+  margin-top: 22px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(17, 27, 32, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.resource-note-label {
+  color: #7a4a35;
+  font-weight: 600;
+}
+
+.resource-note h3 {
+  margin: 10px 0 12px;
+  font-size: 1.2rem;
+}
+
+.resource-note p {
+  margin: 0;
+}
+
+.resource-note .detail-list {
+  margin-top: 16px;
+}
+
 .resource-item {
   display: flex;
   align-items: center;
@@ -524,6 +551,38 @@ input {
   border-color: rgba(17, 27, 32, 0.24);
 }
 
+.doc-shell {
+  max-width: 920px;
+}
+
+.doc-title {
+  max-width: none;
+}
+
+.doc-card {
+  margin-top: 24px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(17, 27, 32, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.doc-card h2 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  max-width: none;
+  color: var(--text);
+}
+
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 .demo-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -536,6 +595,10 @@ input {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+}
+
+.demo-link-line {
+  margin-top: 22px;
 }
 
 .command-chip {
