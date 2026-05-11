@@ -101,3 +101,4 @@ python3 src/main.py bot
 - [Черновой DOCX-отчёт](reports/report.docx)
 - [Черновой PDF-отчёт](reports/report.pdf)
 # projects-practice
+# projects-practice
