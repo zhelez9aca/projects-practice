@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrackSwop</title>
+    <meta
+      name="description"
+      content="TrackSwop — проект для переноса и управления музыкальными плейлистами между Spotify, VK Music и локальными файлами."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="#home" aria-label="TrackSwop">
+          <img src="images/logo.png" alt="Логотип TrackSwop" width="36" height="36" />
+          <span>TrackSwop</span>
+        </a>
+        <nav class="nav">
+          <a href="#about">О проекте</a>
+          <a href="#features">Возможности</a>
+          <a href="#architecture">Архитектура</a>
+          <a href="#providers">Провайдеры</a>
+          <a href="#participants">Участники</a>
+          <a href="#journal">Журнал</a>
+          <a href="#resources">Ресурсы</a>
+          <a href="#demo">Бот</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-content">
+          <p class="eyebrow">Проект по дисциплине «Проектная деятельность»</p>
+          <h1>TrackSwop переносит плейлисты между музыкальными сервисами через единый интерфейс</h1>
+          <p class="hero-copy">
+            Проект объединяет Spotify, VK Music и локальные файлы в одну модульную систему.
+            Основной акцент сделан на provider-based архитектуре, безопасном хранении токенов,
+            динамических формах настройки и удобном desktop-интерфейсе на PySide6.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/Seregax/TrackSwop" target="_blank" rel="noopener noreferrer"
+              >Открыть репозиторий</a
+            >
+            <a class="button secondary" href="#demo">Открыть Telegram-бота-справочник</a>
+          </div>
+          <div class="hero-stats" aria-label="Ключевые показатели проекта">
+            <article class="metric">
+              <span class="metric-label">Провайдеры</span>
+              <strong>Spotify, VK, Local</strong>
+            </article>
+            <article class="metric">
+              <span class="metric-label">Архитектура</span>
+              <strong>MVVM + Registry</strong>
+            </article>
+            <article class="metric">
+              <span class="metric-label">Безопасность</span>
+              <strong>Fernet + TokenStore</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band summary-band">
+        <div class="container summary-grid">
+          <article class="summary-card">
+            <span class="summary-kicker">Проблема</span>
+            <h2>Платформы разрознены</h2>
+            <p>
+              Перенос плейлистов между сервисами обычно требует отдельных сценариев и ручной
+              синхронизации.
+            </p>
+          </article>
+          <article class="summary-card">
+            <span class="summary-kicker">Решение</span>
+            <h2>Единый слой интеграции</h2>
+            <p>
+              TrackSwop абстрагирует API провайдеров и даёт единый интерфейс для плейлистов,
+              треков и операций импорта/экспорта.
+            </p>
+          </article>
+          <article class="summary-card">
+            <span class="summary-kicker">Результат</span>
+            <h2>Готовая основа для роста</h2>
+            <p>
+              Реализованы базовая архитектура, Spotify, TokenStore и тесты; дополнительные
+              провайдеры и UI-улучшения развиваются дальше.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band light" id="about">
+        <div class="container split-layout">
+          <div>
+            <p class="section-label">О проекте</p>
+            <h2>TrackSwop — десктопное приложение для миграции и управления плейлистами</h2>
+            <p>
+              По README проекта TrackSwop — расширяемое приложение для импорта, экспорта и
+              управления плейлистами между несколькими музыкальными платформами. В основе лежит
+              единый интерфейс для работы с музыкальными сервисами и модульная архитектура
+              провайдеров.
+            </p>
+            <p>
+              Проект ориентирован не только на конечного пользователя, который переносит музыку, но
+              и на разработчиков, которым нужен повторно используемый слой интеграции.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-tag">Пользователи</span>
+              <h3>Миграция между сервисами</h3>
+              <p>Подходит тем, кто переносит плейлисты между Spotify, VK Music и локальной библиотекой.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-tag">Разработка</span>
+              <h3>Основа для интеграций</h3>
+              <p>Provider-based слой упрощает встраивание новых музыкальных сервисов без переписывания ядра.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-tag">Надёжность</span>
+              <h3>Безопасное хранение токенов</h3>
+              <p>TokenStore шифрует токены через Fernet и хранит их локально в `tokens.json`.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-tag">UX</span>
+              <h3>Динамические формы</h3>
+              <p>UI генерирует поля авторизации и настройки из спецификаций провайдера.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band accent" id="features">
+        <div class="container split-layout reverse">
+          <div class="visual-panel">
+            <img
+              src="images/trackswop-local.png"
+              alt="Реальный экран TrackSwop с локальным источником и списком треков"
+            />
+          </div>
+          <div>
+            <p class="section-label">Возможности</p>
+            <h2>Что уже умеет TrackSwop</h2>
+            <ul class="detail-list">
+              <li>динамически строит формы авторизации и настройки провайдеров;</li>
+              <li>читает плейлисты и треки из поддерживаемых сервисов;</li>
+              <li>создаёт новые плейлисты и добавляет треки там, где это поддержано;</li>
+              <li>нормализует метаданные треков для кросс-платформенного переноса;</li>
+              <li>показывает прогресс переноса и базовую статистику;</li>
+              <li>сохраняет токены в зашифрованном виде.</li>
+            </ul>
+            <div class="stack-strip">
+              <span>Python</span>
+              <span>PySide6</span>
+              <span>Spotipy</span>
+              <span>vk_api</span>
+              <span>Cryptography</span>
+              <span>Mutagen</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band light" id="architecture">
+        <div class="container split-layout">
+          <div>
+            <p class="section-label">Архитектура</p>
+            <h2>Четыре слоя и единый реестр сервисов</h2>
+            <p>
+              По документации TrackSwop собран как модульное приложение с разделением ответственности
+              между presentation, domain, service и infrastructure слоями. В presentation используется
+              MVVM-подход, а `ServiceRegistry` подключает доступные сервисы: `spotify`, `vk`, `local`.
+            </p>
+            <ul class="detail-list">
+              <li>Presentation: Qt-виджеты и ViewModel.</li>
+              <li>Domain: сущности `Playlist` и `Track`.</li>
+              <li>Service: провайдеры и их фабрики.</li>
+              <li>Infrastructure: конфигурация, логирование, TokenStore.</li>
+            </ul>
+          </div>
+          <div class="visual-panel muted-panel">
+            <img
+              src="images/architecture-board.png"
+              alt="Диаграмма архитектуры TrackSwop со слоями presentation, domain, service и infrastructure"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="band dark" id="providers">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Провайдеры</p>
+              <h2>Источники и назначения для переноса музыки</h2>
+            </div>
+          </div>
+          <div class="providers-grid">
+            <article class="provider-card">
+              <span class="provider-tag">Spotify</span>
+              <h3>OAuth2 и плейлисты пользователя</h3>
+              <p>
+                Провайдер использует OAuth2 через браузер, работает с плейлистами, треками,
+                созданием плейлистов и добавлением треков. Токены кешируются и шифруются.
+              </p>
+            </article>
+            <article class="provider-card">
+              <span class="provider-tag">VK Music</span>
+              <h3>Token + user_id и fallback-поиск</h3>
+              <p>
+                VK-провайдер авторизуется по token и user_id, получает плейлисты и умеет искать
+                треки по названию, если прямой доступ к данным плейлиста недоступен.
+              </p>
+            </article>
+            <article class="provider-card">
+              <span class="provider-tag">Local Files</span>
+              <h3>Импорт из директории</h3>
+              <p>
+                Локальный провайдер читает музыку из корневой папки и подпапок первого уровня.
+                Экспорт в локальный источник не реализован.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band light" id="interface">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Интерфейс</p>
+              <h2>Реальные экраны TrackSwop</h2>
+            </div>
+          </div>
+          <div class="screenshots-grid">
+            <article class="screenshot-card wide">
+              <img
+                src="images/trackswop-vk.png"
+                alt="Экран TrackSwop с провайдером VK Music, плейлистами и треками"
+              />
+              <div class="screenshot-copy">
+                <h3>VK Music как источник</h3>
+                <p>Выбор сервиса, авторизация, список плейлистов и просмотр треков внутри выбранного источника.</p>
+              </div>
+            </article>
+            <article class="screenshot-card">
+              <img
+                src="images/trackswop-local.png"
+                alt="Экран TrackSwop с локальным источником и двумя найденными треками"
+              />
+              <div class="screenshot-copy">
+                <h3>Local Files</h3>
+                <p>Импорт локальной директории и просмотр найденных треков через локальный провайдер.</p>
+              </div>
+            </article>
+            <article class="screenshot-card">
+              <img
+                src="images/trackswop-transfer-running.png"
+                alt="Экран TrackSwop с переносом плейлиста в процессе"
+              />
+              <div class="screenshot-copy">
+                <h3>Перенос в процессе</h3>
+                <p>Прогресс-бар, статистика обработки и журнал операций в реальном времени.</p>
+              </div>
+            </article>
+            <article class="screenshot-card">
+              <img
+                src="images/trackswop-transfer-complete.png"
+                alt="Экран TrackSwop с успешно завершённым переносом плейлиста"
+              />
+              <div class="screenshot-copy">
+                <h3>Успешное завершение</h3>
+                <p>Финальная статистика после полного переноса без ошибок.</p>
+              </div>
+            </article>
+            <article class="screenshot-card">
+              <img
+                src="images/trackswop-transfer-errors.png"
+                alt="Экран TrackSwop с журналом ошибок при переносе плейлиста"
+              />
+              <div class="screenshot-copy">
+                <h3>Обработка ошибок</h3>
+                <p>Журнал операций показывает проблемные треки и итоговые счётчики успешных и неуспешных действий.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band light" id="participants">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Участники</p>
+              <h2>Личный вклад в создание TrackSwop</h2>
+            </div>
+          </div>
+          <div class="participants-grid">
+            <article class="participant-card">
+              <p class="participant-name">Жакупов Данияр Бисултанович</p>
+              <p class="participant-role">Аналитика, пояснительная записка и экономика проекта</p>
+              <ul class="detail-list">
+                <li>провёл анализ конкурентов и выделил их преимущества и недостатки;</li>
+                <li>подготовил экономический раздел проекта;</li>
+                <li>выполнил анализ целевой аудитории в пояснительной записке.</li>
+              </ul>
+            </article>
+            <article class="participant-card">
+              <p class="participant-name">Коньков Павел Александрович</p>
+              <p class="participant-role">Группа 251-332 · хранилище данных и тестирование локального сервиса</p>
+              <ul class="detail-list">
+                <li>создал хранилище для сохранения пользовательских данных между сессиями;</li>
+                <li>участвовал в тестировании локального сервиса.</li>
+              </ul>
+            </article>
+            <article class="participant-card">
+              <p class="participant-name">Железнов Александр Денисович</p>
+              <p class="participant-role">Группа 251-332 · view model, тесты и асинхронная загрузка</p>
+              <ul class="detail-list">
+                <li>реализовал тесты для view model'ей;</li>
+                <li>покрыл ключевую логику поведения view model'ей: выбор сервиса, обновление состояния, проверку начального состояния, работу с выбранным плейлистом и загрузку списка плейлистов;</li>
+                <li>реализовал асинхронную загрузку плейлистов через отдельный worker и добавил индикатор загрузки в UI.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band dark" id="journal">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Журнал</p>
+              <h2>Три этапа разработки TrackSwop</h2>
+            </div>
+          </div>
+          <div class="journal-grid">
+            <article class="journal-card">
+              <span class="journal-step">Этап 1</span>
+              <h3>Фундамент проекта и базовая архитектура</h3>
+              <p>
+                В ранних задачах были собраны каркас репозитория, базовые модели, интерфейс
+                потокового сервиса и служебные утилиты. Затем в историю проекта вошли TokenStore,
+                DynamicForm и локальный directory parser, которые сформировали основу расширяемой
+                архитектуры.
+              </p>
+            </article>
+            <article class="journal-card">
+              <span class="journal-step">Этап 2</span>
+              <h3>Сервисы и пользовательский интерфейс</h3>
+              <p>
+                Следующий блок коммитов добавил авторизацию Spotify, главное окно приложения,
+                playlist widget, transfer widget и локальный сервис. На этом этапе TrackSwop
+                превратился из каркаса в рабочий desktop-интерфейс с подключаемыми провайдерами.
+              </p>
+            </article>
+            <article class="journal-card">
+              <span class="journal-step">Этап 3</span>
+              <h3>Рабочий прототип, релиз и документация</h3>
+              <p>
+                После сборки рабочих экранов и сервиса переноса в репозитории появился working
+                prototype, затем был оформлен релиз `v0.1.0`. Позже в репозиторий добавили и
+                обновили README, закрепив описание возможностей, стека и текущего статуса TrackSwop.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band light" id="resources">
+        <div class="container split-layout">
+          <div>
+            <p class="section-label">Ресурсы</p>
+            <h2>Источники, по которым собраны сайт и бот</h2>
+            <div class="resources-list">
+              <a
+                href="https://github.com/Seregax/TrackSwop"
+                class="resource-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Репозиторий TrackSwop</a
+              >
+              <a
+                href="https://github.com/Seregax/TrackSwop/blob/main/README.md"
+                class="resource-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Главный README</a
+              >
+              <a
+                href="https://github.com/Seregax/TrackSwop/blob/main/src/model/services/providers/spotify/README.md"
+                class="resource-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Spotify Integration Guide</a
+              >
+              <a
+                href="https://developer.spotify.com/documentation/web-api"
+                class="resource-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Spotify Web API</a
+              >
+              <a
+                href="https://spotipy.readthedocs.io/"
+                class="resource-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Документация Spotipy</a
+              >
+              <a
+                href="https://github.com/Seregax/TrackSwop/issues"
+                class="resource-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Issues и обратная связь</a
+              >
+            </div>
+          </div>
+          <div class="visual-panel muted-panel">
+            <img
+              src="images/trackswop-transfer-running.png"
+              alt="Реальный экран TrackSwop с активным прогрессом переноса плейлиста"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="band demo-band" id="demo">
+        <div class="container demo-grid">
+          <div>
+            <p class="section-label">Telegram-бот</p>
+            <h2>Справочник по документации TrackSwop</h2>
+            <p>
+              Ниже — симулятор вариативной части практики: Telegram-бота, который отвечает на
+              вопросы по TrackSwop на русском языке. Он основан на README проекта, guide по Spotify
+              и коде провайдеров.
+            </p>
+            <div class="command-list" id="command-list">
+              <button type="button" class="command-chip" data-command="О проекте">О проекте</button>
+              <button type="button" class="command-chip" data-command="Возможности">Возможности</button>
+              <button type="button" class="command-chip" data-command="Архитектура">Архитектура</button>
+              <button type="button" class="command-chip" data-command="Провайдеры">Провайдеры</button>
+              <button type="button" class="command-chip" data-command="Spotify">Spotify</button>
+              <button type="button" class="command-chip" data-command="VK Music">VK Music</button>
+              <button type="button" class="command-chip" data-command="Local Files">Local Files</button>
+              <button type="button" class="command-chip" data-command="Установка">Установка</button>
+              <button type="button" class="command-chip" data-command="Источники">Источники</button>
+            </div>
+          </div>
+
+          <section class="chat-shell" aria-label="Симулятор бота">
+            <header class="chat-header">
+              <div>
+                <strong>TrackSwop Assistant Bot</strong>
+                <p>Навигатор по документации, архитектуре и провайдерам TrackSwop</p>
+              </div>
+              <span class="mode-badge" id="mode-badge">Проверка API...</span>
+            </header>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-suggestions" id="chat-suggestions"></div>
+            <form class="chat-form" id="chat-form">
+              <label class="visually-hidden" for="chat-input">Сообщение для бота</label>
+              <input
+                id="chat-input"
+                name="chat-input"
+                type="text"
+                placeholder="Например: Spotify"
+                autocomplete="off"
+              />
+              <button type="submit" class="button primary">Отправить</button>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>TrackSwop · перенос плейлистов · Telegram-бот по документации проекта</p>
+        <a href="#home">Наверх</a>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

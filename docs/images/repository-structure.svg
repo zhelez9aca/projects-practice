@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820" fill="none">
+  <rect width="1280" height="820" rx="32" fill="#F3EEE5"/>
+  <text x="80" y="110" fill="#10191F" font-family="Arial, sans-serif" font-size="44" font-weight="700">Источники контента TrackSwop</text>
+  <rect x="80" y="160" width="1120" height="580" rx="28" fill="#FFFFFF" stroke="#D8CEC0" stroke-width="2"/>
+
+  <text x="120" y="228" fill="#7A4A35" font-family="Courier New, monospace" font-size="28">TrackSwop/</text>
+  <text x="200" y="228" fill="#10191F" font-family="Courier New, monospace" font-size="28">README.md</text>
+  <text x="200" y="276" fill="#43525C" font-family="Courier New, monospace" font-size="24">описание, аудитория, цели, стек, статус</text>
+
+  <text x="200" y="350" fill="#10191F" font-family="Courier New, monospace" font-size="28">src/model/services/providers/spotify/README.md</text>
+  <text x="200" y="398" fill="#43525C" font-family="Courier New, monospace" font-size="24">OAuth2, установка, scopes, безопасность</text>
+
+  <text x="200" y="472" fill="#10191F" font-family="Courier New, monospace" font-size="28">src/model/services/registry/service_registry.py</text>
+  <text x="200" y="520" fill="#43525C" font-family="Courier New, monospace" font-size="24">доступные сервисы: spotify, vk, local</text>
+
+  <text x="200" y="594" fill="#10191F" font-family="Courier New, monospace" font-size="28">src/model/store/token_store.py</text>
+  <text x="200" y="642" fill="#43525C" font-family="Courier New, monospace" font-size="24">Fernet, tokens.json, TRACKSWOP_MASTER_KEY</text>
+</svg>

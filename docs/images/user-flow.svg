@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" rx="32" fill="#E0ECE8"/>
+  <text x="88" y="112" fill="#10191F" font-family="Arial, sans-serif" font-size="44" font-weight="700">Поток ответа бота по документации TrackSwop</text>
+
+  <rect x="82" y="250" width="220" height="148" rx="24" fill="#FFFFFF" stroke="#8F4839" stroke-width="2"/>
+  <text x="118" y="322" fill="#10191F" font-family="Arial, sans-serif" font-size="30" font-weight="700">Пользователь</text>
+
+  <rect x="382" y="250" width="220" height="148" rx="24" fill="#FFFFFF" stroke="#2EA79A" stroke-width="2"/>
+  <text x="440" y="322" fill="#10191F" font-family="Arial, sans-serif" font-size="30" font-weight="700">Запрос</text>
+
+  <rect x="682" y="250" width="220" height="148" rx="24" fill="#FFFFFF" stroke="#C6A358" stroke-width="2"/>
+  <text x="724" y="322" fill="#10191F" font-family="Arial, sans-serif" font-size="30" font-weight="700">Engine</text>
+
+  <rect x="982" y="250" width="220" height="148" rx="24" fill="#FFFFFF" stroke="#F1855F" stroke-width="2"/>
+  <text x="1038" y="322" fill="#10191F" font-family="Arial, sans-serif" font-size="30" font-weight="700">Ответ</text>
+
+  <path d="M302 324H382" stroke="#8F4839" stroke-width="4" stroke-linecap="round"/>
+  <path d="M602 324H682" stroke="#2EA79A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M902 324H982" stroke="#C6A358" stroke-width="4" stroke-linecap="round"/>
+
+  <text x="102" y="470" fill="#43525C" font-family="Arial, sans-serif" font-size="22">1. Например: Spotify</text>
+  <text x="372" y="470" fill="#43525C" font-family="Arial, sans-serif" font-size="22">2. Выбор сценария</text>
+  <text x="676" y="470" fill="#43525C" font-family="Arial, sans-serif" font-size="22">3. Ответ по исходникам</text>
+  <text x="972" y="470" fill="#43525C" font-family="Arial, sans-serif" font-size="22">4. Текст + подсказки</text>
+</svg>
